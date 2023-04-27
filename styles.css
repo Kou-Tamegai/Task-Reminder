@@ -1,0 +1,217 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgb(172, 232, 252);
+}
+
+h1 {
+  font-size: 78px;
+  text-align: center;
+  margin: 0;
+  font-family: 'Corben', cursive;
+}
+
+#classForm {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#countdownContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.submit-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  width: 120px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px auto;
+  cursor: pointer;
+  border-radius: 22px;
+}
+
+.submitted {
+  background-color: #c0c0c0;
+}
+
+.submit-btn:hover,
+.delete-btn:hover {
+  opacity: .5;
+  transition: all 0.5s;
+}
+
+.submitted {
+  opacity: 0.4;
+}
+
+.delete-btn {
+  background-color: #afafaf;
+  border: none;
+  width: 120px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 8px auto;
+  cursor: pointer;
+  border-radius: 22px;
+}
+
+
+.countdown-card {
+  background-color: rgba(255, 255, 255, 0.649);
+  padding: 15px;
+  margin: 15px;
+  width: 600px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 7px 13px 20px -1px #777777;
+  border-radius: 10px;
+}
+
+.countdownCard h2 {
+  margin-bottom: 0.5rem;
+}
+
+.countdown-text {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.countdown-text.none {
+  display: none;
+}
+
+.countdown-text.red {
+  color: rgb(255, 0, 0);
+}
+
+.countdown-text.yellow {
+  color: rgb(255, 255, 0);
+}
+
+.countdown-text.black {
+  color: black;
+}
+
+/* アニメーション */
+
+@keyframes blink {
+  0% {
+    background-color: rgba(255, 255, 255, 0.649);
+  }
+  50% {
+    background-color: rgb(255, 0, 0);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.649);
+  }
+}
+
+/* メモ欄 */
+textarea {
+  width: 70%;
+  margin: 0 auto;
+  resize: vertical;
+  border-radius: 8px;
+}
+
+/* ボタン */
+
+.bn632-hover {
+  width: 140px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 40px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn23 {
+  background-image: linear-gradient(
+    to right,
+    #009245,
+    #fcee21,
+    #00a8c5,
+    #d9e021
+  );
+  box-shadow: 0 4px 15px 0 rgba(83, 176, 57, 0.75);
+}
+
+.bn632-hover {
+  width: 160px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:hover {
+  background-position: 100% 0;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.bn632-hover:focus {
+  outline: none;
+}
+
+.bn632-hover.bn20 {
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="img/TaskRemindFavicon.png" />
+  <title>Task Reminder</title>
+</head>
+<body>
+  <h1>Task Reminder</h1>
+  <form id="classForm">
+    <label for="className">授業名:</label>
+    <input type="text" id="className" required>
+    <label for="deadlineDay">締切曜日:</label>
+    <select id="deadlineDay" required>
+      <option value="0">日曜日</option>
+      <option value="1">月曜日</option>
+      <option value="2">火曜日</option>
+      <option value="3">水曜日</option>
+      <option value="4">木曜日</option>
+      <option value="5">金曜日</option>
+      <option value="6">土曜日</option>
+    </select>
+    <label for="deadlineTime">締切時間:</label>
+    <input type="time" id="deadlineTime" required>
+    <template id="submitBtnTemplate">
+      <button class="submit-btn">提出</button>
+    </template>
+    <a href=""><button type="submit" class="bn632-hover bn23">授業を追加</button></a>
+  </form>
+  <div id="countdownContainer">
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>

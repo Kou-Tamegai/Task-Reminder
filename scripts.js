@@ -113,27 +113,27 @@ countdownCard.appendChild(memo);
     const submitButton = document.importNode(document.getElementById("submitBtnTemplate").content, true);
     const btn = submitButton.querySelector(".submit-btn");
     btn.addEventListener("click", () => {
-      if (!countdownCard.classList.contains("submitted")) {
+      countdownCard.classList.toggle("submitted");
+      if (countdownCard.classList.contains("submitted")) {
         clearInterval(countdownCard.intervalId);
         btn.disabled = true;
         btn.textContent = "提出済み";
         stopBlinkAnimation(countdownCard);
         moveCardToBottom(countdownCard);
-        countdownCard.classList.add("submitted");
       } else {
         btn.disabled = false;
         btn.textContent = "提出";
-        countdownCard.classList.remove("submitted");
         countdownCard.intervalId = setInterval(() => {
           updateCountdown(countdownCard);
         }, 1000);
       }
     
       const index = Array.prototype.indexOf.call(document.getElementById("countdownContainer").children, countdownCard);
-      const classData = JSON.parse(localStorage.getItem("classData")) || [];
-      classData[index].submitted = countdownCard.classList.contains("submitted");
-      localStorage.setItem("classData", JSON.stringify(classData));
-    });
+  const classData = JSON.parse(localStorage.getItem("classData")) || [];
+  classData[index].submitted = countdownCard.classList.contains("submitted");
+  localStorage.setItem("classData", JSON.stringify(classData));
+  sortCards();
+});
 
     countdownCard.appendChild(submitButton);
 
@@ -152,6 +152,24 @@ countdownCard.appendChild(memo);
     document.getElementById("countdownContainer").appendChild(countdownCard);
   });
 }
+
+function sortCards() {
+  const container = document.getElementById("countdownContainer");
+  const submittedCards = [];
+  const notSubmittedCards = [];
+
+  Array.from(container.children).forEach(card => {
+    if (card.classList.contains("submitted")) {
+      submittedCards.push(card);
+    } else {
+      notSubmittedCards.push(card);
+    }
+  });
+
+  container.innerHTML = "";
+  notSubmittedCards.concat(submittedCards).forEach(card => container.appendChild(card));
+}
+
 
 function moveCardToBottom(card) {
   const container = document.getElementById("countdownContainer");
